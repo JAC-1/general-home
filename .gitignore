@@ -1,0 +1,44 @@
+# Nix-specific files and directories
+/result
+/result-*
+/.nix-profile
+/nix
+*.nix~
+*.nix.bak
+
+# Flake-specific files
+flake.lock
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary and cache files
+*.bak
+*.tmp
+*.cache
+.direnv/
+.envrc
+
+# Sensitive or local configuration files
+*.secret
+*.secrets
+*.key
+*.gpg
+*.age
+
+# Logs and build artifacts
+*.log
+/dist
+/build
+/out
+
+# macOS-specific files
+.DS_Store
+
+# Common project-specific ignores
+/secrets/
+/home-manager/private/
