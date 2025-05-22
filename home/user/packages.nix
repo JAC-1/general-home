@@ -13,11 +13,16 @@
     nodejs_23
     fzf
     neovim
+    alacritty
+    eza
 
 
    # Writing
    pandoc
    texliveTeTeX
+
+
+
 
 
   ];
