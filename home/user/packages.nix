@@ -13,9 +13,16 @@
     nodejs_23
     fzf
     neovim
+    alacritty
+
+
+   # Writing
+   pandoc
+   texliveTeTeX
+
 
    # Gaming
-    # pkgs.steam
+    # steam
     # pkgs.steam-run
     # pkgs.yuzu-mainline
     # (pkgs.lutris.override {

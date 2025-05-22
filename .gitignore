@@ -6,8 +6,6 @@
 *.nix~
 *.nix.bak
 
-# Flake-specific files
-flake.lock
 
 # Editor and IDE files
 .vscode/
