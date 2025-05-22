@@ -7,5 +7,11 @@ in
         enable = true;
         userName = userName;
         userEmail = email;
+        extraConfig = {
+            core = {
+                fileMode = false;
+              };
+          };
     };
+    programs.gh.enable = true;
 }
