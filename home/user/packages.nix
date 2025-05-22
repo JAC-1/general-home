@@ -15,6 +15,7 @@
     neovim
     alacritty
     eza
+    lazygit
 
 
    # Writing

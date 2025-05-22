@@ -10,11 +10,13 @@ let
     # fullRebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles/ && home-manager switch --flake ~/.dotfiles/ -b backup";
     homeRebuild = "home-manager switch --flake ~/Repos/general-home/ -b backup";
     alacritty = "nixGL alacritty";
+    hm-edit = "cd ~/Repos/general-home/ && nvim";
 };
 in
 {
   programs = {
 	zsh = {
+    shellAliases = myAliases;
 		enable = true;
 		syntaxHighlighting.enable = true;
 		initExtra = ''

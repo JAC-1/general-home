@@ -1,11 +1,11 @@
 return {
-  { "ellisonleao/gruvbox.nvim", lazy = false, priority = 1000 },
+  -- { "ellisonleao/gruvbox.nvim", lazy = false, priority = 1000 },
   -- { "ntk148v/komau.vim" },
-  {
-    "slugbyte/lackluster.nvim",
-    lazy = false,
-    priority = 1000,
-  },
+  -- {
+  --   "slugbyte/lackluster.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
   -- {
   --   "navarasu/onedark.nvim",
   --   lazy = false,
@@ -16,22 +16,30 @@ return {
   --     })
   --   end,
   -- },
+  -- {
+  --   "neanias/everforest-nvim",
+  --   version = false,
+  --   lazy = false,
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   -- Optional; default configuration will be used if setup isn't called.
+  --   config = function()
+  --     require("everforest").setup({
+  --       -- Your config here
+  --     })
+  --   end,
+  -- },
   {
-    "neanias/everforest-nvim",
-    version = false,
+    "catppuccin/nvim",
     lazy = false,
-    priority = 1000, -- make sure to load this before all the other start plugins
-    -- Optional; default configuration will be used if setup isn't called.
-    config = function()
-      require("everforest").setup({
-        -- Your config here
-      })
-    end,
+    priority = 1000,
+    opts = {
+      transparent_background = true,
+    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "everforest",
+      colorscheme = "catppuccin-macchiato",
     },
   },
 }
