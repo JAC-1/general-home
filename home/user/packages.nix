@@ -13,7 +13,6 @@
     nodejs_23
     fzf
     neovim
-    alacritty
 
 
    # Writing
@@ -21,25 +20,5 @@
    texliveTeTeX
 
 
-   # Gaming
-    # steam
-    # pkgs.steam-run
-    # pkgs.yuzu-mainline
-    # (pkgs.lutris.override {
-    #   extraPkgs = pkgs: [
-    #     pkgs.wineWowPackages.stable
-    #     pkgs.winetricks
-    #   ];
-    # })
-
-    # Downloads
-    # pkgs.qbittorrent
-
-    # Utils
-    # viewnior
-    # hyprshot
-    # catppuccin-cursors.macchiatoBlue
-    # catppuccin-gtk
-    # papirus-folders
   ];
 }
