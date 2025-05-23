@@ -16,6 +16,7 @@
     alacritty
     eza
     lazygit
+    bfg-repo-cleaner
 
 
    # Writing

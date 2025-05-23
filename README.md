@@ -54,6 +54,24 @@ nix-env -iA nixgl.auto.nixGLDefault
 # https://github.com/nix-community/nixGL
 ```
 
-# Done?
+## If you mess-up
+
+Use `bfg --delete-files oops.gpg`, or `bfg --delete-folders oops/ooops/`.
+Then you can clean and update the repo by doing a push (according to the bfg docs), or you can do the following:
+
+```bash
+git reflog expire --expire=now --all && git gc --prune=now --aggressive
+git push --force --all
+git push --force --tags
+```
+
+THIS WILL REWRITE HISTORY, so any previous commits will be nuked and gone forever. Consider making a local backup or something just in case.
+
+```bash
+git clone --mirror <repo-url>
+cd <repo-name>.git
+```
+
+## Done?
 
 I may have missed a few things here and there.
