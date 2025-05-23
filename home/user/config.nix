@@ -1,4 +1,6 @@
-let configDir = ../config;
+let 
+  configDir = ../config;
+  firefoxDir = "~/.mozilla/firefox/892a52q8.default-release";
 in
 {
   home.file = {
@@ -15,5 +17,6 @@ in
       # ".config/wofi".source = "${configDir}/wofi";
       # ".config/mako".source = "${configDir}/mako";
       # ".config/zed".source = "${configDir}/zed";
+      "${firefoxDir}/chrome".source = "${configDir}/firefox/chrome";
   };
 }
