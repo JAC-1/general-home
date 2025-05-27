@@ -4,6 +4,13 @@
   home.packages = with pkgs; [
     home-manager
 
+    # Go
+    go
+    wails
+    libcanberra-gtk3
+    # libcanberra-gtk2
+    # libcanberra
+
     # Dev and nvim
     zig
     gcc

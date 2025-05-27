@@ -21,6 +21,8 @@ in
 		syntaxHighlighting.enable = true;
 		initExtra = ''
          export TERM=xterm-256color
+         # export PATH=$PATH:/usr/local/go/bin
+        . "$HOME/.cargo/env"
 		      '';
     zplug = {
         enable = true;
