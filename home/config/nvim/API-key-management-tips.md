@@ -15,23 +15,20 @@ security add-generic-password -s "MistralAPI" -a "Justin" -w
 security find-generic-password -w -s "MistralAPI"
 ```
 
-## Storing and retrieving using GnuPG (linux)
+## Storing and retrieving using pass and GnuPG (linux)
 
 ### Generating and storing
 
 ```bash
-# Generate a random password
-password=$(openssl rand -base64 32)
+# Setup pass using gpg
+gpg --gen-key
+pass init <key-id>
 
-# Encrypt the password using GPG
-echo "$password" | gpg --batch --yes --passphrase-fd 0 --output /path/to/api_key.gpg --symmetric
+# Insert the Api_key
+pass insert <api_key_name_of_your_choosing>
 
-# Verify the encryption
-gpg --batch --quiet --decrypt /path/to/api_key.gpg
-```
+# Showing
 
-### Decrypting
+pass show <api_key_name_of_your_choosing>
 
-```bash
-cmd: gpg --batch --quiet --decrypt /path/to/api_key.gpg
 ```

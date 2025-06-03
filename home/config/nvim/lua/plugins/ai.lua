@@ -1,14 +1,17 @@
 return {
+  {
+    "github/copilot.vim",
+  },
   -- {
   --   "olimorris/codecompanion.nvim",
   --   config = function()
   --     require("codecompanion").setup({
   --       strategies = {
   --         chat = {
-  --           adapter = "copilot",
+  --           adapter = "openai",
   --         },
   --         inline = {
-  --           adapter = "copilot",
+  --           adapter = "openai",
   --         },
   --       },
   --       opts = {
@@ -21,7 +24,8 @@ return {
   --             env = {
   --               url = "https://api.mistral.ai",
   --               -- Secure passkey retreval for Macos
-  --               api_key = 'cmd: security find-generic-password -w -s "MistralAPI"',
+  --               -- api_key = 'cmd: security find-generic-password -w -s "MistralAPI"',
+  --               -- api_key = "cmd: pass show codestral",
   --               chat_url = "/v1/chat/completions",
   --             },
   --             handlers = {

@@ -24,7 +24,12 @@
     eza
     lazygit
     bfg-repo-cleaner
+    tree
 
+    # Security
+    pass
+    gnupg
+    mullvad
 
    # Writing
    pandoc
