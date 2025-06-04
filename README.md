@@ -72,6 +72,10 @@ git clone --mirror <repo-url>
 cd <repo-name>.git
 ```
 
+## Zed Editor
+
+Depending on the destro, you may need to disable discrete graphics in order to get Zed to work. On the HP laptop, Zed always tried to use the llvmpipe and not the integrated graphics. The answer was to access `/etc/prime-discrete` and change the `on` to `off`. Perhaps this could also remove the error when running it on desktop with the nv
+
 ## Done?
 
 I may have missed a few things here and there.

@@ -6,11 +6,14 @@ let
     nixClean = ''
         nix-collect-garbage --delete-old
     '';
-    # rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles/";
-    # fullRebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles/ && home-manager switch --flake ~/.dotfiles/ -b backup";
     homeRebuild = "home-manager switch --flake ~/Repos/general-home/ -b backup";
     alacritty = "nixGL alacritty";
     hm-edit = "cd ~/Repos/general-home/ && nvim";
+    fetchLazyvimConfig = "gh repo clone JAC-1/lazyvim-config ~/.config/nvim";
+
+    imageWatch = "cd ~/Repos/Electron/image-viewer/ && npm run dev --watch";
+
+
 };
 in
 {
@@ -23,6 +26,7 @@ in
          export TERM=xterm-256color
          # export PATH=$PATH:/usr/local/go/bin
         . "$HOME/.cargo/env"
+        export PATH=$HOME/.local/bin:$PATH 
 		      '';
     zplug = {
         enable = true;

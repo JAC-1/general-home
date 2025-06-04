@@ -4,7 +4,7 @@ let
 in
 {
   home.file = {
-      ".config/nvim".source = "${configDir}/nvim";
+      # ".config/nvim".source = "${configDir}/nvim";
       # ".config/wallpapers".source = "${configDir}/wallpapers";
       ".config/kitty".source = "${configDir}/kitty";
       # ".config/neofetch".source = "${configDir}/neofetch";
@@ -16,7 +16,7 @@ in
       # ".config/btop".source = "${configDir}/btop";
       # ".config/wofi".source = "${configDir}/wofi";
       # ".config/mako".source = "${configDir}/mako";
-      # ".config/zed".source = "${configDir}/zed";
+      ".config/zed".source = "${configDir}/zed";
       "${firefoxDir}/chrome".source = "${configDir}/firefox/chrome";
   };
 }
