@@ -14,10 +14,9 @@
     # Dev and nvim
     zig
     gcc
-    python3
     luarocks
     fd
-    nodejs_23
+    nodejs_22
     fzf
     neovim
     alacritty

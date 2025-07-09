@@ -10,6 +10,7 @@
     "context": "Workspace",
     "bindings": {
       "cmd-t": "terminal_panel::ToggleFocus",
+      "alt-t": "terminal_panel::ToggleFocus",
       "ctrl-h": null,
       "ctrl-j": null,
       "ctrl-k": null,
@@ -20,6 +21,7 @@
   {
     "context": "Editor",
     "bindings": {
+      "alt-t": "terminal_panel::ToggleFocus",
       "ctrl-h": null,
       "ctrl-j": null,
       "ctrl-k": null,
@@ -31,6 +33,7 @@
     "context": "Terminal",
     "bindings": {
       "cmd-t": "workspace::ToggleBottomDock",
+      "alt-t": "workspace::ToggleBottomDock",
       "cmd-n": "workspace::NewTerminal",
       "L": "pane::ActivateNextItem",
       "H": "pane::ActivatePreviousItem",
@@ -49,11 +52,12 @@
   {
     "context": "vim_mode == normal",
     "bindings": {
+      "alt-t": "terminal_panel::ToggleFocus",
       "space e": "workspace::ToggleLeftDock",
       ";": ["workspace::SendKeystrokes", ":"],
       "L": "pane::ActivateNextItem",
       "H": "pane::ActivatePreviousItem",
-      "space a": "workspace::ToggleRightDock",
+      "alt-q": "workspace::ToggleRightDock",
       "space f": "file_finder::Toggle",
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
@@ -84,6 +88,12 @@
     "context": "ContextEditor > Editor && vim_mode == normal",
     "bindings": {
       "enter": "assistant::Assist"
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "alt-q": "workspace::ToggleRightDock"
     }
   }
 ]

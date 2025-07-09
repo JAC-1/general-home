@@ -15,6 +15,7 @@
   "inline_completions": {
     "disabled_globs": [".env", "app/ui/dashboard/nav-links.tsx"]
   },
+  "terminal": { "shell": { "program": "zsh" } },
   "base_keymap": "VSCode",
   "vim_mode": true,
   "cursor_blink": false,
