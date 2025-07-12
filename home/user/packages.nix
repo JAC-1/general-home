@@ -16,7 +16,6 @@
     gcc
     luarocks
     fd
-    nodejs_22
     fzf
     neovim
     alacritty
