@@ -11,6 +11,13 @@ return {
     },
   },
 
+  -- Toggle Term
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    opts = {--[[ things you want to change go here]]
+    },
+  },
   --Diabled
   { "akinsho/bufferline.nvim", enabled = false },
   { "iamcco/markdown-preview.nvim", enabled = false },
