@@ -198,6 +198,22 @@ Or add to `home/user/shell.nix` in the `initExtra` section.
 - Use `nix flake check` before applying to catch errors
 - Symlinks created by Home Manager should not be edited directly
 
+## Neovim / LazyVim Setup
+
+After running `home-manager switch`, if you encounter a permission error with `lazy-lock.json`:
+
+```
+Error: /home/justin/.config/nvim/lazy-lock.json: Permission denied
+```
+
+This happens because the file becomes a symlink to the read-only Nix store. Fix it with:
+
+```bash
+rm ~/.config/nvim/lazy-lock.json && touch ~/.config/nvim/lazy-lock.json
+```
+
+This is a one-time fix. The configuration already excludes `lazy-lock.json` from being managed by home-manager (see `home/user/nvim.nix`), allowing lazy.nvim to write to it freely.
+
 ## Using on NixOS
 
 This config works on NixOS without changes!

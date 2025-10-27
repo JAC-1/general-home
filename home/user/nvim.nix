@@ -17,4 +17,8 @@
     source = ../config/nvim;
     recursive = true;
   };
+
+  # Exclude lazy-lock.json from being managed by home-manager
+  # This allows Lazy.nvim to write to it
+  xdg.configFile."nvim/lazy-lock.json".enable = lib.mkForce false;
 }
