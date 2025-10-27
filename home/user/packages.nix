@@ -16,7 +16,7 @@
     gh            # GitHub CLI
 
     # Development tools
-    pkgs-unstable.neovim
+    # neovim (configured in nvim.nix)
     lazygit
     tmux
     

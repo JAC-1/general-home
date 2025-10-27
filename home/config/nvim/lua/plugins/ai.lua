@@ -1,0 +1,71 @@
+return {
+  {
+    "olimorris/codecompanion.nvim",
+    config = function()
+      require("codecompanion").setup({
+        strategies = {
+          chat = {
+            adapter = "copilot",
+          },
+          inline = {
+            adapter = "copilot",
+          },
+        },
+        opts = {
+          stream = true,
+        },
+        adapters = {
+          openai = function()
+            return require("codecompanion.adapters").extend("openai_compatible", {
+              name = "codestral",
+              env = {
+                url = "https://api.mistral.ai",
+                -- Secure passkey retreval for Macos
+                api_key = 'cmd: security find-generic-password -w -s "MistralAPI"',
+                chat_url = "/v1/chat/completions",
+              },
+              handlers = {
+                form_parameters = function(self, params, messages)
+                  -- codestral doesn't support these in the body
+                  params.stream_options = nil
+                  params.options = nil
+
+                  return params
+                end,
+              },
+              schema = {
+                model = {
+                  default = "codestral-latest",
+                },
+                temperature = {
+                  default = 0.2,
+                  mapping = "parameters", -- not supported in default parameters.options
+                },
+              },
+            })
+          end,
+        },
+        prompt_library = {
+          ["My New Prompt"] = {
+            strategy = "chat",
+            description = "A cool new prompt to get some rude responses do my discouragement",
+            prompts = {
+              {
+                role = "system",
+                content = "You are a coach that gives seemingly rude words of encouragement to discouraged people.",
+              },
+              {
+                role = "user",
+                content = "I'm having trouble with ...",
+              },
+            },
+          },
+        },
+      })
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+  },
+}

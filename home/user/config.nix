@@ -39,11 +39,7 @@ in
     
     # Optional configurations (uncomment as needed)
     
-    # NOTE: Neovim config is NOT managed here!
-    # Your separate nvim repo in ~/.config/nvim takes precedence
-    # This allows you to update nvim config independently without touching home-manager
-    
-    # If you ever want to manage nvim via home-manager, uncomment below:
+    # Neovim configuration (moved to nvim.nix)
     # ".config/nvim" = {
     #   source = "${configDir}/nvim";
     #   recursive = true;
