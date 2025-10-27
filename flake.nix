@@ -1,32 +1,67 @@
 {
-    description = "Justin's home-manager config";
+  description = "Justin's home-manager config for non-NixOS systems";
 
-    inputs = {
-	    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-        nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-        home-manager.url = "github:nix-community/home-manager/release-24.11";
-        home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
+  inputs = {
+    # Nixpkgs stable
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    
+    # Nixpkgs unstable for latest packages
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    
+    # Home Manager (stable)
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
 
-    outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
-	let
-	    lib = nixpkgs.lib;
-	    system = "x86_64-linux";
-	    pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
-	in
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      
+      # Helper function to create pkgs with overlays
+      mkPkgs = nixpkgs: system: import nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+          allowUnfreePredicate = (_: true);
+        };
+      };
+      
+      pkgs = mkPkgs nixpkgs system;
+      pkgs-unstable = mkPkgs nixpkgs-unstable system;
+      
+    in
     {
-
-		homeConfigurations = {
-			justin = home-manager.lib.homeManagerConfiguration {
-				inherit pkgs;
-				modules = [ ./home ];
-                extraSpecialArgs = {
-                    inherit pkgs-unstable;
-                    inherit inputs;
-                };
-			};
-		};
+      # Home Manager configuration for standalone (non-NixOS) systems
+      homeConfigurations = {
+        # Main user configuration
+        justin = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          
+          modules = [ 
+            ./home
+          ];
+          
+          # Extra arguments passed to all modules
+          extraSpecialArgs = {
+            inherit pkgs-unstable inputs;
+          };
+        };
+      };
+      
+      # Optional: Development shell for working on this config
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          home-manager
+          git
+          nixpkgs-fmt
+        ];
+        
+        shellHook = ''
+          echo "Home Manager development shell"
+          echo "Run 'home-manager switch --flake .#justin' to apply config"
+        '';
+      };
     };
 }

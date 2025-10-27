@@ -5,7 +5,16 @@
     ./user
   ];
 
+  # User information
   home.username = "justin";
   home.homeDirectory = "/home/justin";
+  
+  # Home Manager version - DO NOT CHANGE unless upgrading
   home.stateVersion = "24.11";
+  
+  # Let Home Manager install and manage itself
+  programs.home-manager.enable = true;
+  
+  # Nicely reload system units when changing configs
+  systemd.user.startServices = "sd-switch";
 }

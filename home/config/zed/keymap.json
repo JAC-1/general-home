@@ -10,7 +10,7 @@
     "context": "Workspace",
     "bindings": {
       "cmd-t": "terminal_panel::ToggleFocus",
-      "alt-t": "terminal_panel::ToggleFocus",
+      "ctrl-t": "terminal_panel::ToggleFocus",
       "ctrl-h": null,
       "ctrl-j": null,
       "ctrl-k": null,
@@ -21,25 +21,28 @@
   {
     "context": "Editor",
     "bindings": {
-      "alt-t": "terminal_panel::ToggleFocus",
+      "cmd-t": "terminal_panel::ToggleFocus",
+      "ctrl-t": "terminal_panel::ToggleFocus",
       "ctrl-h": null,
       "ctrl-j": null,
       "ctrl-k": null,
       "ctrl-l": null,
       "cmd-o": "projects::OpenRecent"
+      // "ctrl-w": "k"
     }
   },
   {
     "context": "Terminal",
     "bindings": {
       "cmd-t": "workspace::ToggleBottomDock",
-      "alt-t": "workspace::ToggleBottomDock",
+      "ctrl-t": "workspace::ToggleBottomDock",
       "cmd-n": "workspace::NewTerminal",
       "L": "pane::ActivateNextItem",
       "H": "pane::ActivatePreviousItem",
       "ctrl-h": null,
       "ctrl-j": null,
       "ctrl-l": null,
+      "shift-l": null,
       "ctrl-k": "workspace::ActivatePaneUp"
     }
   },
@@ -52,25 +55,30 @@
   {
     "context": "vim_mode == normal",
     "bindings": {
+      "space h": "pane::TogglePinTab",
       "alt-t": "terminal_panel::ToggleFocus",
       "space e": "workspace::ToggleLeftDock",
       ";": ["workspace::SendKeystrokes", ":"],
       "L": "pane::ActivateNextItem",
       "H": "pane::ActivatePreviousItem",
-      "alt-q": "workspace::ToggleRightDock",
-      "space f": "file_finder::Toggle",
+      "space a": "workspace::ToggleRightDock",
+      "space k": "editor::Hover",
+      "space s f": "file_finder::Toggle",
+      "space s g": "project_panel::NewSearchInDirectory",
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-l": "workspace::ActivatePaneRight"
     }
   },
+
   {
     "context": "vim_mode == visual",
     "bindings": {
       // "space a": "assistant::InlineAssist",
       // "space  ,": "assistant::InsertIntoEditor",
       // "space .": "assistant::QuoteSelection"
+      "space c a": "editor::ToggleCodeActions"
     }
   },
   {
@@ -94,6 +102,22 @@
     "context": "AgentPanel",
     "bindings": {
       "alt-q": "workspace::ToggleRightDock"
+    }
+  },
+  // Key bindings for when no files are open
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      // Open file finder
+      "space space": "file_finder::Toggle",
+      // New file
+      "space f n": "workspace::NewFile",
+      // Open recent project
+      "space f p": "projects::OpenRecent",
+      // Search in all the files
+      "space s g": "workspace::NewSearch",
+      // Quit zed
+      "space q q": "zed::Quit"
     }
   }
 ]

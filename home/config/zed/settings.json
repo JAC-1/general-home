@@ -8,35 +8,55 @@
 // from the command palette
 {
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "copilot"
   },
   "tab_bar": { "show": false },
-  "show_inline_completions": false,
-  "inline_completions": {
+  "show_edit_predictions": true,
+  "edit_predictions": {
     "disabled_globs": [".env", "app/ui/dashboard/nav-links.tsx"]
   },
-  "terminal": { "shell": { "program": "zsh" } },
   "base_keymap": "VSCode",
   "vim_mode": true,
   "cursor_blink": false,
   "relative_line_numbers": true,
   "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "buffer_font_family": "0xProto Nerd Font",
-  "assistant": {
+  "buffer_font_size": 17,
+  "buffer_font_family": "BlexMono Nerd Font Mono",
+  "buffer_font_weight": 500,
+  "agent": {
+    "profiles": {
+      "test": {
+        "name": "test",
+        "tools": {},
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    },
+    "default_profile": "write",
+    "always_allow_tool_actions": true,
     "enabled": true,
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
     },
 
-    "version": "2",
     "default_width": 375
   },
 
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark"
-  }
+    "dark": "Everforest Dark Soft"
+  },
+  //  1. All workspaces open during last session
+  //         "restore_on_startup": "last_session"
+  //  2. The workspace opened
+  //         "restore_on_startup": "last_workspace",
+  //  3. Do not restore previous workspaces
+  //         "restore_on_startup": "none",
+  "restore_on_startup": "none"
 }
