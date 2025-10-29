@@ -1,6 +1,6 @@
 # File and directory linking configuration
 # Links dotfiles from the config directory to appropriate locations
-let 
+let
   configDir = ../config;
   # Firefox profile directory - adjust this to match your actual profile
   firefoxProfile = ".mozilla/firefox/892a52q8.default-release";
@@ -12,87 +12,93 @@ in
       source = "${configDir}/hypr";
       recursive = true;
     };
-    
+
     # Terminal configuration
     ".config/kitty" = {
       source = "${configDir}/kitty";
       recursive = true;
     };
-    
+
+    ".config/alacritty" = {
+      source = "${configDir}/alacritty";
+      recursive = true;
+    }
+
+
     # Text editor
     ".config/zed" = {
       source = "${configDir}/zed";
       recursive = true;
     };
-    
+
     # Wallpapers
     ".config/wallpapers" = {
       source = "${configDir}/wallpapers";
       recursive = true;
     };
-    
+
     # Firefox customization
     "${firefoxProfile}/chrome" = {
       source = "${configDir}/firefox/chrome";
       recursive = true;
     };
-    
+
     # Optional configurations (uncomment as needed)
-    
-    
+
+
     # System monitor
     # ".config/btop" = {
     #   source = "${configDir}/btop";
     #   recursive = true;
     # };
-    
+
     # Wayland bar
     # ".config/waybar" = {
     #   source = "${configDir}/waybar";
     #   recursive = true;
     # };
-    
+
     # Application launcher
     # ".config/wofi" = {
     #   source = "${configDir}/wofi";
     #   recursive = true;
     # };
-    
+
     # Notification daemon
     # ".config/mako" = {
     #   source = "${configDir}/mako";
     #   recursive = true;
     # };
-    
+
     # Screen locker
     # ".config/swaylock" = {
     #   source = "${configDir}/swaylock";
     #   recursive = true;
     # };
-    
+
     # Idle management
     # ".config/swayidle" = {
     #   source = "${configDir}/swayidle";
     #   recursive = true;
     # };
-    
+
     # Logout menu
     # ".config/wlogout" = {
     #   source = "${configDir}/wlogout";
     #   recursive = true;
     # };
-    
+
     # System info
     # ".config/neofetch" = {
     #   source = "${configDir}/neofetch";
     #   recursive = true;
     # };
   };
-  
+
   # XDG user directories configuration
   xdg = {
     enable = true;
-    
+
     userDirs = {
       enable = true;
       createDirectories = true;
@@ -105,7 +111,7 @@ in
       templates = "$HOME/Templates";
       publicShare = "$HOME/Public";
     };
-    
+
     # XDG MIME types (file associations)
     mimeApps = {
       enable = true;

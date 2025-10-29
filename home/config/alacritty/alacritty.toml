@@ -1,0 +1,24 @@
+[font]
+normal = { family = "FiraCode Nerd Font Mono" }
+size = 13.0
+
+[window]
+dimensions = { columns = 120, lines = 40 }
+opacity = 0.9
+decorations = "Transparent"
+
+[cursor]
+style = "Block"
+blink_interval = 0
+
+[scrolling]
+history = 10000
+
+[bell]
+command = "None"
+
+[terminal]
+shell = { program = "/usr/bin/fish" }
+
+[keyboard]
+bindings = [{ key = "Enter", mods = "Control", chars = '\x1b[13;5u' }]
