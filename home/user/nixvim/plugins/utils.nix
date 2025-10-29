@@ -8,6 +8,9 @@
       };
     };
 
+
+
+
     # Plenary (required by many plugins - auto-included)
     # plenary.enable = true;
 
@@ -117,6 +120,25 @@
   };
 
   programs.nixvim.keymaps = [
+    # jj to escape in insert mode
+    {
+      mode = "i";
+      key = "jj";
+      action = "<Esc>";
+      options.desc = "Exit insert mode";
+    }
+
+    # Semicolon mapping temporarily removed for testing
+    # {
+    #   mode = "n";
+    #   key = ";";
+    #   action = ":";
+    #   options = {
+    #     desc = "Enter command mode";
+    #     noremap = true;
+    #   };
+    # }
+
     # Oil file explorer
     {
       mode = "n";
@@ -126,12 +148,12 @@
     }
 
     # Flash navigation
-    {
-      mode = ["n" "x" "o"];
-      key = "s";
-      action = "<cmd>lua require('flash').jump()<cr>";
-      options.desc = "Flash jump";
-    }
+    # {
+    #   mode = ["n" "x" "o"];
+    #   key = "s";
+    #   action = "<cmd>lua require('flash').jump()<cr>";
+    #   options.desc = "Flash jump";
+    # }
     {
       mode = ["n" "x" "o"];
       key = "S";

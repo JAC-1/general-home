@@ -8,31 +8,31 @@
         ui-select.enable = true;
       };
       keymaps = {
-        "<leader>ff" = {
+        "<leader>sf" = {
           action = "find_files";
           options.desc = "Find files";
         };
-        "<leader>fg" = {
+        "<leader>sg" = {
           action = "live_grep";
           options.desc = "Live grep";
         };
-        "<leader>fb" = {
+        "<leader>sb" = {
           action = "buffers";
           options.desc = "Find buffers";
         };
-        "<leader>fh" = {
+        "<leader>sh" = {
           action = "help_tags";
           options.desc = "Help tags";
         };
-        "<leader>fr" = {
+        "<leader>sr" = {
           action = "oldfiles";
           options.desc = "Recent files";
         };
-        "<leader>fw" = {
+        "<leader>sw" = {
           action = "grep_string";
           options.desc = "Find word under cursor";
         };
-        "<leader>fp" = {
+        "<leader>sp" = {
           action = "projects";
           options.desc = "Find projects";
         };

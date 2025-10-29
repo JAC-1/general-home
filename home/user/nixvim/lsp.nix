@@ -80,7 +80,7 @@
           diagnostic = {
             "[d" = "goto_prev";
             "]d" = "goto_next";
-            "<leader>e" = "open_float";
+            # "<leader>e" = "open_float";
             "<leader>q" = "setloclist";
             "gl" = "open_float"; # Easy diagnostic popup like VSCode hover
           };
@@ -109,8 +109,8 @@
             "<C-space>" = ["show" "show_documentation" "hide_documentation"];
             "<C-e>" = ["hide"];
             "<CR>" = ["accept" "fallback"];
-            "<Tab>" = ["select_next" "fallback"];
-            "<S-Tab>" = ["select_prev" "fallback"];
+            "<C-n>" = ["select_next" "fallback"];
+            "<C-u>" = ["select_prev" "fallback"];
             "<C-b>" = ["scroll_documentation_up" "fallback"];
             "<C-f>" = ["scroll_documentation_down" "fallback"];
           };

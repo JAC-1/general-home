@@ -7,7 +7,7 @@
     ./packages.nix
     ./environment.nix
     # ./nvim.nix
-    ./nixvim
+    # ./nixvim
   ];
 
   # Nixpkgs configuration
@@ -22,7 +22,7 @@
       ];
     };
   };
-  
+
   # Enable home-manager to manage itself
   programs.home-manager.enable = true;
 }

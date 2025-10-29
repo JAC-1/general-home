@@ -69,6 +69,96 @@
           separator = "➜";
           group = "+";
         };
+        spec = [
+          {
+            __unkeyed-1 = "<leader>a";
+            group = "AI";
+          }
+          {
+            __unkeyed-1 = "<leader>b";
+            group = "Buffer";
+          }
+          {
+            __unkeyed-1 = "<leader>c";
+            group = "Code";
+          }
+          {
+            __unkeyed-1 = "<leader>d";
+            group = "Debug";
+          }
+          {
+            __unkeyed-1 = "<leader>h";
+            group = "Harpoon";
+          }
+          {
+            __unkeyed-1 = "<leader>q";
+            group = "Quit";
+          }
+          {
+            __unkeyed-1 = "<leader>r";
+            group = "Rename";
+          }
+          {
+            __unkeyed-1 = "<leader>s";
+            group = "Search";
+          }
+          {
+            __unkeyed-1 = "<leader>ha";
+            desc = "Add file";
+          }
+          {
+            __unkeyed-1 = "<leader>hh";
+            desc = "Quick menu";
+          }
+          {
+            __unkeyed-1 = "<leader>hn";
+            desc = "Next file";
+          }
+          {
+            __unkeyed-1 = "<leader>hp";
+            desc = "Previous file";
+          }
+          {
+            __unkeyed-1 = "<leader>1";
+            desc = "Harpoon file 1";
+          }
+          {
+            __unkeyed-1 = "<leader>2";
+            desc = "Harpoon file 2";
+          }
+          {
+            __unkeyed-1 = "<leader>3";
+            desc = "Harpoon file 3";
+          }
+          {
+            __unkeyed-1 = "<leader>4";
+            desc = "Harpoon file 4";
+          }
+          {
+            __unkeyed-1 = "<leader>5";
+            desc = "Harpoon file 5";
+          }
+          {
+            __unkeyed-1 = "<leader>6";
+            desc = "Harpoon file 6";
+          }
+          {
+            __unkeyed-1 = "<leader>7";
+            desc = "Harpoon file 7";
+          }
+          {
+            __unkeyed-1 = "<leader>8";
+            desc = "Harpoon file 8";
+          }
+          {
+            __unkeyed-1 = "<leader>9";
+            desc = "Harpoon file 9";
+          }
+          {
+            __unkeyed-1 = "<leader>g";
+            desc = "Git";
+          }
+        ];
       };
     };
 
