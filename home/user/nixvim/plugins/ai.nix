@@ -34,37 +34,11 @@
       enable = true;
     };
 
-    # CodeCompanion for AI assistance
-    extraPlugins = with pkgs.vimPlugins; [
-      {
-        plugin = codecompanion-nvim;
-        config = ''
-          lua << EOF
-          require("codecompanion").setup({
-            strategies = {
-              chat = {
-                adapter = "copilot",
-              },
-              inline = {
-                adapter = "copilot",
-              },
-            },
-            adapters = {
-              copilot = function()
-                return require("codecompanion.adapters").extend("copilot", {
-                  schema = {
-                    model = {
-                      default = "claude-3.5-sonnet",
-                    },
-                  },
-                })
-              end,
-            },
-          })
-          EOF
-        '';
-      }
-    ];
+    # CodeCompanion 
+    # plugins.codecompanion = {
+    #   enable = true;
+    # };
+
 
     keymaps = [
       # CodeCompanion chat

@@ -41,14 +41,14 @@
       enable = true;
     };
 
-    # Auto-save
-    auto-save = {
-      enable = true;
-      settings = {
-        enabled = true;
-        trigger_events = ["InsertLeave" "TextChanged"];
-      };
-    };
+    # Auto-save TODO: Fix
+    # auto-save = {
+    #   enable = true;
+    #   settings = {
+    #     enabled = true;
+    #     trigger_events = ["InsertLeave" "TextChanged"];
+    #   };
+    # };
 
     # Project management
     project-nvim = {

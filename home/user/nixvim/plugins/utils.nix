@@ -8,8 +8,8 @@
       };
     };
 
-    # Plenary (required by many plugins)
-    plenary.enable = true;
+    # Plenary (required by many plugins - auto-included)
+    # plenary.enable = true;
 
     # Flash for enhanced navigation
     flash = {
@@ -42,7 +42,7 @@
     # Mini modules (ai, surround, pairs, hipatterns)
     mini = {
       enable = true;
-      mockDevIcons = true;
+      mockDevIcons = false;  # Set to false since we use web-devicons
       modules = {
         ai = {
           n_lines = 500;
@@ -75,10 +75,10 @@
       };
     };
 
-    # Better search and replace
-    grug-far = {
-      enable = true;
-    };
+    # Better search and replace (disabled - not in stable nixvim 24.11)
+    # grug-far = {
+    #   enable = true;
+    # };
 
     # Snippet engine
     luasnip = {
@@ -88,22 +88,6 @@
           paths = ./.; # Load friendly-snippets
         }
       ];
-    };
-
-    # Rust-specific tools
-    rustaceanvim = {
-      enable = true;
-      settings = {
-        server = {
-          default_settings = {
-            rust-analyzer = {
-              cargo.allFeatures = true;
-              check.command = "clippy";
-              inlayHints.lifetimeElisionHints.enable = "always";
-            };
-          };
-        };
-      };
     };
 
     # Crates.nvim for Rust dependencies
@@ -281,13 +265,13 @@
       options.desc = "Document diagnostics";
     }
 
-    # Search and replace
-    {
-      mode = "n";
-      key = "<leader>sr";
-      action = "<cmd>GrugFar<cr>";
-      options.desc = "Search and replace";
-    }
+    # Search and replace (disabled - grug-far not in stable)
+    # {
+    #   mode = "n";
+    #   key = "<leader>sr";
+    #   action = "<cmd>GrugFar<cr>";
+    #   options.desc = "Search and replace";
+    # }
 
     # Todo comments
     {

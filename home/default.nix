@@ -12,6 +12,9 @@
   # Home Manager version - DO NOT CHANGE unless upgrading
   home.stateVersion = "24.11";
   
+  # Disable version check (temporary fix for mismatch)
+  home.enableNixpkgsReleaseCheck = false;
+  
   # Let Home Manager install and manage itself
   programs.home-manager.enable = true;
   

@@ -16,6 +16,17 @@
             enable = true;
             installCargo = false;
             installRustc = false;
+            settings = {
+              server = {
+                default_settings = {
+                  rust-analyzer = {
+                    cargo.allFeatures = true;
+                    check.command = "clippy";
+                    inlayHints.lifetimeElisionHints.enable = "always";
+                  };
+                };
+              };
+            };
           };
 
           # JSON
