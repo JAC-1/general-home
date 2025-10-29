@@ -39,11 +39,6 @@ in
     
     # Optional configurations (uncomment as needed)
     
-    # Neovim configuration (moved to nvim.nix)
-    # ".config/nvim" = {
-    #   source = "${configDir}/nvim";
-    #   recursive = true;
-    # };
     
     # System monitor
     # ".config/btop" = {
