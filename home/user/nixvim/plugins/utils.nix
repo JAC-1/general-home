@@ -32,11 +32,7 @@
         };
         modes = {
           char = {
-            enabled = true;
-            # Don't hide text during f/F/t/T motions
-            highlight = {
-              backdrop = false;
-            };
+            enabled = false;  # Keep disabled to prevent ; conflict
           };
         };
       };
@@ -83,6 +79,15 @@
     #   enable = true;
     # };
 
+    toggleterm = {
+      enable = true;
+      # settings = {
+      #   size = 15;
+      #   open_mapping = "<C-t>";
+      #   direction = "horizontal";
+      # };
+    };
+
     # Snippet engine
     luasnip = {
       enable = true;
@@ -128,16 +133,16 @@
       options.desc = "Exit insert mode";
     }
 
-    # Semicolon mapping temporarily removed for testing
-    # {
-    #   mode = "n";
-    #   key = ";";
-    #   action = ":";
-    #   options = {
-    #     desc = "Enter command mode";
-    #     noremap = true;
-    #   };
-    # }
+    # Semicolon to enter command mode
+    {
+      mode = "n";
+      key = ";";
+      action = ":";
+      options = {
+        desc = "Enter command mode";
+        noremap = true;
+      };
+    }
 
     # Oil file explorer
     {
@@ -148,12 +153,12 @@
     }
 
     # Flash navigation
-    # {
-    #   mode = ["n" "x" "o"];
-    #   key = "s";
-    #   action = "<cmd>lua require('flash').jump()<cr>";
-    #   options.desc = "Flash jump";
-    # }
+    {
+      mode = ["n" "x" "o"];
+      key = "s";
+      action = "<cmd>lua require('flash').jump()<cr>";
+      options.desc = "Flash jump";
+    }
     {
       mode = ["n" "x" "o"];
       key = "S";
@@ -272,7 +277,19 @@
       action = "<cmd>UndotreeToggle<cr>";
       options.desc = "Toggle undo tree";
     }
-
+    # ToggleTerm
+    {
+      mode= "n";
+      key = "<C-t>";
+      action = "<cmd>ToggleTerm<cr>";
+      options.desc = "Toggle terminal";
+    }
+    {
+      mode= "t";
+      key = "<C-t>";
+      action = "<cmd>ToggleTerm<cr>";
+      options.desc = "Toggle terminal";
+    }
     # Trouble
     {
       mode = "n";

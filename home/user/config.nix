@@ -22,7 +22,7 @@ in
     ".config/alacritty" = {
       source = "${configDir}/alacritty";
       recursive = true;
-    }
+    };
 
 
     # Text editor

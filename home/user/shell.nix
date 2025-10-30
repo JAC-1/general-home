@@ -10,6 +10,9 @@ let
     homeRebuild = "home-manager switch --flake ~/Repos/general-home/ -b backup";
     hm-edit = "cd ~/Repos/general-home/ && nvim";
     
+    # Nvim utilities
+    nvimCleanCache = "rm -rf ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim && echo 'Nvim cache cleared'";
+    
     # Development shortcuts
     fetchLazyvimConfig = "gh repo clone JAC-1/lazyvim-config ~/.config/nvim";
     imageWatch = "cd ~/Repos/Electron/image-viewer/ && npm run dev --watch";

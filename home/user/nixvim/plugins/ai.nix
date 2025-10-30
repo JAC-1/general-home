@@ -34,7 +34,7 @@
       enable = true;
     };
 
-    # CodeCompanion 
+    # CodeCompanion
     # plugins.codecompanion = {
     #   enable = true;
     # };
@@ -54,7 +54,7 @@
         action = "<cmd>CodeCompanionChat<cr>";
         options.desc = "AI Chat";
       }
-      
+
       # CodeCompanion inline
       {
         mode = ["n" "v"];
@@ -62,7 +62,7 @@
         action = "<cmd>CodeCompanion<cr>";
         options.desc = "AI Inline";
       }
-      
+
       # Additional AI commands
       {
         mode = "n";
@@ -82,7 +82,7 @@
         action = "<cmd>CodeCompanionChat Toggle<cr>";
         options.desc = "Toggle AI Chat";
       }
-      
+
       # Copilot Chat shortcuts
       {
         mode = "n";

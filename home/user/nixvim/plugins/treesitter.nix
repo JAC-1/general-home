@@ -1,79 +1,56 @@
-{pkgs, ...}: {
-  programs.nixvim.plugins = {
-    # Treesitter for syntax highlighting
-    treesitter = {
-      enable = true;
-      nixGrammars = true;
-      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-        bash
-        c
-        css
-        diff
-        html
-        javascript
-        jsdoc
-        json
-        lua
-        luadoc
-        markdown
-        markdown_inline
-        nix
-        python
-        regex
-        rust
-        toml
-        tsx
-        typescript
-        vim
-        vimdoc
-        xml
-        yaml
-      ];
-      settings = {
-        highlight.enable = true;
-        indent.enable = true;
-        incremental_selection.enable = true;
-        auto_install = false;
-        sync_install = false;
-        ensure_installed = [];
+{ pkgs, config, ... }:
 
-      };
-    };
-
-    # Treesitter text objects
-    treesitter-textobjects = {
-      enable = true;
-      select = {
+{
+  programs.nixvim = {
+    plugins = {
+      # Tree-sitter core
+      treesitter = {
         enable = true;
-        lookahead = true;
-        keymaps = {
-          "aa" = "@parameter.outer";
-          "ia" = "@parameter.inner";
-          "af" = "@function.outer";
-          "if" = "@function.inner";
-          "aC" = "@class.outer";
-          "iC" = "@class.inner";
+        nixGrammars = false;
+        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+          bash
+          c
+          lua
+          markdown
+          markdown_inline
+          nix
+          python
+          vim
+          vimdoc
+          json
+          yaml
+          html
+          css
+          javascript
+          typescript
+          rust
+        ];
+        settings = {
+          highlight.enable = true;
+          indent.enable = true;
+          incremental_selection.enable = true;
         };
       };
-      move = {
-        enable = true;
-        gotoNextStart = {
-          "]f" = "@function.outer";
-          "]c" = "@class.outer";
-        };
-        gotoPreviousStart = {
-          "[f" = "@function.outer";
-          "[c" = "@class.outer";
-        };
-      };
+
+      # Tree-sitter Text-Objects (disabled due to query errors)
+      # treesitter-textobjects = {
+      #   enable = true;
+      #   select = {
+      #     enable = true;
+      #     lookahead = true;
+      #     keymaps = {
+      #       "aa" = "@parameter.outer";
+      #       "ia" = "@parameter.inner";
+      #       "af" = "@function.outer";
+      #     };
+      #   };
+      #   move = {
+      #     enable = true;
+      #   };
+      # };
     };
-
-    # Auto tag for HTML/JSX (disabled for debugging)
-    # ts-autotag.enable = true;
-
-    # Better comments (disabled for debugging)
-    # ts-comments.enable = true;
   };
 
-
+  # Extra packages you might need at runtime (e.g. gcc for building)
+  programs.nixvim.extraPackages = with pkgs; [ gcc ];
 }
