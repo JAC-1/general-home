@@ -6,8 +6,8 @@
     ./config.nix
     ./packages.nix
     ./environment.nix
-    # ./nvim.nix
-    ./nixvim
+    ./nvim.nix
+    # ./nixvim
   ];
 
   # Nixpkgs configuration

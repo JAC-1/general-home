@@ -10,6 +10,11 @@ return {
       manual_mode = true,
     },
   },
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = true,
+  },
 
   --Diabled
   { "akinsho/bufferline.nvim", enabled = false },
