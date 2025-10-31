@@ -75,4 +75,4 @@ vim.keymap.set("n", "<leader>ac", "<CMD>CodeCompanionChat<CR>", { desc = "CodeCo
 vim.keymap.set("v", "<leader>ac", "<CMD>CodeCompanionChat<CR>", { desc = "CodeCompanion Chat", silent = true })
 vim.keymap.set("n", "<leader>aa", "<CMD>CodeCompanionActions<CR>", { desc = "CodeCompanion Actions", silent = true })
 vim.keymap.set("v", "<leader>aa", "<CMD>CodeCompanionActions<CR>", { desc = "CodeCompanion Actions", silent = true })
-vim.keymap.set("v", "<leader>ak", [[:CodeCompanion ]], { desc = "CodeCompanion Inline" })
+vim.keymap.set("v", "<C-i>", [[:CodeCompanion ]], { desc = "CodeCompanion Inline" })
